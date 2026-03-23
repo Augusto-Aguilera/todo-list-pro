@@ -1,0 +1,183 @@
+/* --- Estilos y Fondo Temático IMPECABLE (Ajuste 16:9) --- */
+body {
+  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  color: #1e293b;
+  overflow-x: hidden; /* Evita desplazamientos laterales */
+  
+  /* --- CONFIGURACIÓN DE TU IMAGEN 3D --- */
+  background-color: #020617; 
+  /* Asegúrate de que el nombre del archivo sea exacto aquí abajo */
+  background-image: url('img/Fondo2.png'); 
+  
+  /* background-size: cover asegura que llene la pantalla sin deformarse */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* --- La Tarjeta Principal (Efecto Glassmorphism Refinado) --- */
+.app {
+  width: 100%;
+  max-width: 400px; /* Un poco más ancha para mayor comodidad */
+  /* Fondo más traslúcido para que tu nombre "Augusto" se vea pasar por detrás */
+  background: rgba(255, 255, 255, 0.82); 
+  padding: 35px;
+  border-radius: 28px;
+  
+  /* Sombra profunda para despegar la tarjeta del fondo 3D */
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6); 
+  
+  /* El desenfoque es la clave para que se vea profesional */
+  backdrop-filter: blur(15px); 
+  -webkit-backdrop-filter: blur(15px); /* Soporte para Safari */
+  
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  z-index: 2;
+  margin: 20px;
+}
+
+h1 { 
+  text-align: center; 
+  color: #0f172a; 
+  margin-top: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 4px rgba(255,255,255,0.5); /* Sutil relieve */
+}
+
+/* --- Contenedores e Inputs --- */
+.input-container { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+  margin-bottom: 25px; 
+}
+
+#task-input, #task-date { 
+  padding: 14px; 
+  border: 2px solid rgba(203, 213, 225, 0.6); 
+  border-radius: 12px; 
+  outline: none; 
+  font-size: 1rem;
+  transition: all 0.3s;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+#task-input:focus, #task-date:focus {
+  border-color: #3b82f6;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+#add-btn { 
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white; 
+  border: none; 
+  padding: 14px; 
+  border-radius: 12px; 
+  cursor: pointer; 
+  font-weight: 700; 
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.4);
+}
+
+#add-btn:hover { 
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+  box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.4);
+}
+
+#counter { 
+  font-weight: 700; 
+  color: #475569; 
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+/* --- Filtros --- */
+.filters { 
+  display: flex; 
+  gap: 8px; 
+  margin-bottom: 20px; 
+}
+
+.filters button { 
+  flex: 1; 
+  padding: 10px; 
+  border: none; 
+  border-radius: 10px; 
+  cursor: pointer; 
+  background: rgba(226, 232, 240, 0.9); 
+  color: #475569; 
+  font-size: 0.8rem; 
+  font-weight: 700;
+  transition: all 0.2s; 
+}
+
+.filters button:hover { 
+  background: #cbd5e1; 
+  color: #1e293b;
+}
+
+/* --- Lista de Tareas --- */
+ul { list-style: none; padding: 0; margin: 0; }
+
+li {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 16px; 
+  background: rgba(255, 255, 255, 0.95); 
+  margin-bottom: 12px;
+  border-radius: 16px; 
+  cursor: pointer; 
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 6px solid #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+li:hover { 
+  transform: scale(1.02) translateX(8px); 
+  background: #ffffff; 
+}
+
+.completed { 
+  text-decoration: line-through; 
+  opacity: 0.6; 
+  border-left-color: #10b981 !important; 
+}
+
+.overdue { 
+  border-left-color: #f59e0b; 
+  background: #fffbeb; 
+}
+
+/* --- Botón Borrar Todo --- */
+#clear-all { 
+  width: 100%; 
+  margin-top: 20px; 
+  padding: 14px; 
+  background: transparent;
+  color: #ef4444; 
+  border: 2px solid rgba(239, 68, 68, 0.2); 
+  border-radius: 14px; 
+  cursor: pointer; 
+  font-weight: 700; 
+  transition: all 0.2s;
+}
+
+#clear-all:hover { 
+  background: #ef4444; 
+  color: white; 
+  border-color: #ef4444;
+}
